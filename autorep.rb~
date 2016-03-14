@@ -75,8 +75,7 @@ client_streaming.user do |object|
         if(/会議/ =~ tweet)
           repl = "会議は長いもの"
         elsif (/たい$/ =~ tweet)
-          re = tweet.dup
-	  re.slice!("@ottosan884_bot")
+          re = tweet.delete("/@ottosan884_bot/")
           if (re.length <= 15)
             repl = re + "わかる"
           else
